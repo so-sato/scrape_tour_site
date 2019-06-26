@@ -1,0 +1,99 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ScrapeTool.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="HOSTS_TRIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.tripadvisor.jp</Value>
+    </Setting>
+    <Setting Name="HOSTS_YELP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.yelp.com</Value>
+    </Setting>
+    <Setting Name="trip_limit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+    <Setting Name="yelp_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.search-result-title .indexed-biz-name a span</Value>
+    </Setting>
+    <Setting Name="yelp_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.search-result-title .indexed-biz-name a</Value>
+    </Setting>
+    <Setting Name="yelp_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.search-result-title .indexed-biz-name</Value>
+    </Setting>
+    <Setting Name="yelp_limit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="trip_restaurant_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.title a</Value>
+    </Setting>
+    <Setting Name="trip_restaurant_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.title a</Value>
+    </Setting>
+    <Setting Name="trip_restaurant_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.popIndexBlock .popIndexDefault</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.listing_title a</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.listing_title a</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.popRanking</Value>
+    </Setting>
+    <Setting Name="trip_next_element" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.pagination span.next.disabled</Value>
+    </Setting>
+    <Setting Name="yelp_selector_item" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.search-result.natural-search-result</Value>
+    </Setting>
+    <Setting Name="trip_selector_item" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.listing:not(.listingIndex-n)</Value>
+    </Setting>
+    <Setting Name="jalan_limit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="jalan_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">p.item-name a</Value>
+    </Setting>
+    <Setting Name="jalan_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">p.item-name a</Value>
+    </Setting>
+    <Setting Name="jalan_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">p.item-name span</Value>
+    </Setting>
+    <Setting Name="HOSTS_JALAN" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">www.jalan.net</Value>
+    </Setting>
+    <Setting Name="jalan_selector_item" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.item-listContents</Value>
+    </Setting>
+    <Setting Name="HOSTS_4TRA" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4travel.jp</Value>
+    </Setting>
+    <Setting Name="fortra_selector_item" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.u_areaListRankingBox</Value>
+    </Setting>
+    <Setting Name="fortra_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.u_title h2</Value>
+    </Setting>
+    <Setting Name="fortra_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.u_title h2 a</Value>
+    </Setting>
+    <Setting Name="fortra_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.u_title .u_iconRanking</Value>
+    </Setting>
+    <Setting Name="fortra_selector_review" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.u_rankBox .evaluateNumber</Value>
+    </Setting>
+    <Setting Name="fortra_limit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="trip_rating" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.rating .ui_bubble_rating</Value>
+    </Setting>
+    <Setting Name="trip_review_count" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.rating span.more a,div.rating span.reviewCount a</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
