@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ScrapeTool.scraper
@@ -60,7 +61,7 @@ namespace ScrapeTool.scraper
             if (ratingElement.HasAttribute("alt"))
             {
                 var alt = ratingElement.GetAttribute("alt");
-                item.extraList.Add(System.Text.RegularExpressions.Regex.Replace(alt, "バブル評価 5 段階中 ", ""));
+                item.extraList.Add(Regex.Replace(Regex.Replace(alt, "バブル評価 5 段階中 ", ""), @"[ ]|[\t]|[\n]|[\r\n]+", ""));
             }
             else
             {
@@ -69,7 +70,7 @@ namespace ScrapeTool.scraper
 
             if (reviewElement != null)
             {
-                item.extraList.Add(System.Text.RegularExpressions.Regex.Replace(reviewElement.TextContent, "件の口コミ", ""));
+                item.extraList.Add(Regex.Replace(Regex.Replace(reviewElement.TextContent, "件の口コミ", ""), @"[ ]|[\t]|[\n]|[\r\n]+", ""));
             }
             else
             {
@@ -80,7 +81,7 @@ namespace ScrapeTool.scraper
         protected override bool filter(ref Item item)
         {
             string regex = this.cityName + ".*" + this.cityCount;
-            if (!System.Text.RegularExpressions.Regex.IsMatch(item.rank, regex))
+            if (!Regex.IsMatch(item.rank, regex))
             {
                 // 正規表現に一致しない場合対象外
                 return false;
