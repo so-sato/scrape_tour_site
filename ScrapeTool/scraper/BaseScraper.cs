@@ -71,7 +71,7 @@ namespace ScrapeTool
                     return new TripActivitiesScraper(url);
                 }
             }
-            else if(hosts.Contains(Properties.Settings.Default.HOSTS_YELP))
+            else if(hosts.StartsWith(Properties.Settings.Default.HOSTS_YELP))
             {
                 return new YelpScraper(url);
             }
@@ -82,6 +82,10 @@ namespace ScrapeTool
             else if (hosts.Contains(Properties.Settings.Default.HOSTS_4TRA))
             {
                 return new FortraScraper(url);
+            }
+            else if (hosts.Contains(Properties.Settings.Default.HOSTS_4SQ))
+            {
+                return new FoursquareScraper(url);
             }
             return null;
         }
@@ -146,7 +150,10 @@ namespace ScrapeTool
             var requester = new HttpRequester();
             requester.Headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
             var config = Configuration.Default.WithDefaultLoader(requesters: new[] { requester }).WithCookies().WithLocaleBasedEncoding();
-            var document = await BrowsingContext.New(config).OpenAsync(url);
+            var context = BrowsingContext.New(config);
+            var document = await context.OpenAsync(url);
+
+         //   this.execJavescript(document);
 
             var cells = document.QuerySelectorAll(selector_item);
 
@@ -175,9 +182,9 @@ namespace ScrapeTool
                 var rankElement = rankElements.Last();
 
                 var item = new Item();
-                item.title = System.Text.RegularExpressions.Regex.Replace(titleElement.TextContent, @"[\t]|[\n]|[\r\n]+", "");
+                item.title = System.Text.RegularExpressions.Regex.Replace(titleElement.TextContent, @"[ ]|[\t]|[\n]|[\r\n]+", "");
                 item.url = ((IHtmlAnchorElement)urlElement).Href;
-                item.rank = System.Text.RegularExpressions.Regex.Replace(rankElement.TextContent, @"[\t]|[\n]|[\r\n]+", "");
+                item.rank = System.Text.RegularExpressions.Regex.Replace(rankElement.TextContent, @"[ ]|[\t]|[\n]|[\r\n]+", "");
                 this.getValueExtra(element, ref item);
 
                 if (!this.filter(ref item))
@@ -221,6 +228,12 @@ namespace ScrapeTool
             // 必要に応じてサブクラスで実装
             return true;
         }
+        /*
+        protected virtual async Task<System.Collections.Generic.IEnumerable<IDocument>> execJavescript(IBrowsingContext context, IDocument document)
+        {
+            // 必要に応じてサブクラスで実装
+            return document;
+        }*/
 
     }
 }
