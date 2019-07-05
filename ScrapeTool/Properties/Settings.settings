@@ -87,7 +87,7 @@
       <Value Profile="(Default)">.u_rankBox .evaluateNumber</Value>
     </Setting>
     <Setting Name="fortra_limit" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">150</Value>
     </Setting>
     <Setting Name="trip_rating" Type="System.String" Scope="User">
       <Value Profile="(Default)">div.rating .ui_bubble_rating</Value>
@@ -114,7 +114,7 @@
       <Value Profile="(Default)">.venueScore</Value>
     </Setting>
     <Setting Name="base_limit" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">150</Value>
     </Setting>
     <Setting Name="HOSTS_4SQ" Type="System.String" Scope="User">
       <Value Profile="(Default)">ja.foursquare.com</Value>

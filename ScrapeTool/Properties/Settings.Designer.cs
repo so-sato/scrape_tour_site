@@ -352,7 +352,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
         public int fortra_limit {
             get {
                 return ((int)(this["fortra_limit"]));
@@ -460,7 +460,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
         public int base_limit {
             get {
                 return ((int)(this["base_limit"]));
