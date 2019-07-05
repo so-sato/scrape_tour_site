@@ -182,9 +182,9 @@ namespace ScrapeTool
                 var rankElement = rankElements.Last();
 
                 var item = new Item();
-                item.title = System.Text.RegularExpressions.Regex.Replace(titleElement.TextContent, @"[ ]|[\t]|[\n]|[\r\n]+", "");
+                item.title = System.Text.RegularExpressions.Regex.Replace(titleElement.TextContent, @"^[\s]+|[\s]+$|[\t]+|[\n]+|[\r\n]+", "");
                 item.url = ((IHtmlAnchorElement)urlElement).Href;
-                item.rank = System.Text.RegularExpressions.Regex.Replace(rankElement.TextContent, @"[ ]|[\t]|[\n]|[\r\n]+", "");
+                item.rank = System.Text.RegularExpressions.Regex.Replace(rankElement.TextContent, @"[\s]+|[\t]+|[\n]+|[\r\n]+", "");
                 this.getValueExtra(element, ref item);
 
                 if (!this.filter(ref item))
