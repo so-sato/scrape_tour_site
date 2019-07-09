@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WindowsFormsApplication1;
 
@@ -40,6 +41,7 @@ namespace ScrapeTool
     abstract class BaseScraper
     {
         protected string url;
+        protected int analyzeModerl = 1;
         protected string cityName;
         protected string cityCount;
 
@@ -56,37 +58,45 @@ namespace ScrapeTool
 
         abstract protected string getNextPageUrl(IDocument document);
 
-        public static BaseScraper factory(string url)
+        public static BaseScraper factory(string url, int analyzeMode)
         {
-            Uri uri = new Uri(url);
-            string hosts = uri.Authority;
-            if (hosts.Contains(Properties.Settings.Default.HOSTS_TRIP))
+            if (analyzeMode == 1)
             {
-                if ((uri.PathAndQuery).ToLower().Contains("restaurants"))
+                Uri uri = new Uri(url);
+                string hosts = uri.Authority;
+                if (hosts.Contains(Properties.Settings.Default.HOSTS_TRIP))
                 {
-                    return new TripRestaurantScraper(url);
+                    if ((uri.PathAndQuery).ToLower().Contains("restaurants"))
+                    {
+                        return new TripRestaurantScraper(url);
+                    }
+                    else
+                    {
+                        return new TripActivitiesScraper(url);
+                    }
                 }
-                else
+                else if (hosts.StartsWith(Properties.Settings.Default.HOSTS_YELP))
                 {
-                    return new TripActivitiesScraper(url);
+                    return new YelpScraper(url);
+                }
+                else if (hosts.Contains(Properties.Settings.Default.HOSTS_JALAN))
+                {
+                    return new JalanScraper(url);
+                }
+                else if (hosts.Contains(Properties.Settings.Default.HOSTS_4TRA))
+                {
+                    return new FortraScraper(url);
+                }
+                else if (hosts.Contains(Properties.Settings.Default.HOSTS_MICHELIN))
+                {
+                    return new MichelinScraper(url);
                 }
             }
-            else if(hosts.StartsWith(Properties.Settings.Default.HOSTS_YELP))
-            {
-                return new YelpScraper(url);
-            }
-            else if (hosts.Contains(Properties.Settings.Default.HOSTS_JALAN))
-            {
-                return new JalanScraper(url);
-            }
-            else if (hosts.Contains(Properties.Settings.Default.HOSTS_4TRA))
-            {
-                return new FortraScraper(url);
-            }
-            else if (hosts.Contains(Properties.Settings.Default.HOSTS_4SQ))
+            else
             {
                 return new FoursquareScraper(url);
             }
+            
             return null;
         }
 
@@ -131,7 +141,7 @@ namespace ScrapeTool
         protected IEnumerable<string> getValue(IDocument document, string selector)
         {
             var cells = document.QuerySelectorAll(selector);
-            var textContents = cells.Select(m => System.Text.RegularExpressions.Regex.Replace(m.TextContent, @"[\t]|[\n]|[\r\n]+", ""));
+            var textContents = cells.Select(m => Regex.Replace(m.TextContent, @"[\t]|[\n]|[\r\n]+", ""));
             return textContents;
         }
 
@@ -146,14 +156,22 @@ namespace ScrapeTool
         {
             crrPage++;
 
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            var requester = new HttpRequester();
-            requester.Headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
-            var config = Configuration.Default.WithDefaultLoader(requesters: new[] { requester }).WithCookies().WithLocaleBasedEncoding();
-            var context = BrowsingContext.New(config);
-            var document = await context.OpenAsync(url);
-
-         //   this.execJavescript(document);
+            IDocument document = null;
+            if (analyzeModerl == 1)
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                var requester = new HttpRequester();
+                requester.Headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36";
+                var config = Configuration.Default.WithDefaultLoader(requesters: new[] { requester }).WithCookies().WithLocaleBasedEncoding();
+                var context = BrowsingContext.New(config);
+                document = await context.OpenAsync(url);
+            }
+            else
+            {
+                var config = Configuration.Default.WithJavaScript().WithCss();
+                var parser = new HtmlParser(config);
+                document = parser.Parse(url);
+            }
 
             var cells = document.QuerySelectorAll(selector_item);
 
@@ -182,10 +200,11 @@ namespace ScrapeTool
                 var rankElement = rankElements.Last();
 
                 var item = new Item();
-                item.title = System.Text.RegularExpressions.Regex.Replace(titleElement.TextContent, @"^[\s]+|[\s]+$|[\t]+|[\n]+|[\r\n]+", "");
+                item.title = Regex.Replace(titleElement.TextContent, @"^[\s]+|[\s]+$|[\t]+|[\n]+|[\r\n]+", "");
                 item.url = ((IHtmlAnchorElement)urlElement).Href;
-                item.rank = System.Text.RegularExpressions.Regex.Replace(rankElement.TextContent, @"[\s]+|[\t]+|[\n]+|[\r\n]+", "");
+                item.rank = Regex.Replace(rankElement.TextContent, @"[\s]+|[\t]+|[\n]+|[\r\n]+", "");
                 this.getValueExtra(element, ref item);
+                item = await this.addDetailAnalyze(item.url, item);
 
                 if (!this.filter(ref item))
                 {
@@ -223,17 +242,23 @@ namespace ScrapeTool
             // 必要に応じてサブクラスで実装
         }
 
+        #pragma warning disable 1998
+        protected virtual async Task<Item> addDetailAnalyze(string url, Item item)
+        {
+            // 必要に応じてサブクラスで実装
+            return item;
+        }
+
         protected virtual bool filter(ref Item item)
         {
             // 必要に応じてサブクラスで実装
             return true;
         }
-        /*
-        protected virtual async Task<System.Collections.Generic.IEnumerable<IDocument>> execJavescript(IBrowsingContext context, IDocument document)
+        
+        protected virtual void execJavescript(IBrowsingContext context, IDocument document)
         {
             // 必要に応じてサブクラスで実装
-            return document;
-        }*/
+        }
 
     }
 }

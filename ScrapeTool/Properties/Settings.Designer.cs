@@ -91,18 +91,6 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int yelp_limit {
-            get {
-                return ((int)(this["yelp_limit"]));
-            }
-            set {
-                this["yelp_limit"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("div.title a")]
         public string trip_restaurant_selector_title {
             get {
@@ -352,18 +340,6 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("150")]
-        public int fortra_limit {
-            get {
-                return ((int)(this["fortra_limit"]));
-            }
-            set {
-                this["fortra_limit"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("div.rating .ui_bubble_rating")]
         public string trip_rating {
             get {
@@ -436,7 +412,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".u_title .u_iconRanking")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".venueName .venueIndex")]
         public string forsq_selector_rank {
             get {
                 return ((string)(this["forsq_selector_rank"]));
@@ -479,6 +455,102 @@ namespace ScrapeTool.Properties {
             }
             set {
                 this["HOSTS_4SQ"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("li.poi-item-restaurant")]
+        public string michelin_selector_item {
+            get {
+                return ((string)(this["michelin_selector_item"]));
+            }
+            set {
+                this["michelin_selector_item"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_title {
+            get {
+                return ((string)(this["michelin_selector_title"]));
+            }
+            set {
+                this["michelin_selector_title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_url {
+            get {
+                return ((string)(this["michelin_selector_url"]));
+            }
+            set {
+                this["michelin_selector_url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_rank {
+            get {
+                return ((string)(this["michelin_selector_rank"]));
+            }
+            set {
+                this["michelin_selector_rank"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".poi-item-quotation-symbol")]
+        public string michelin_selector_rating {
+            get {
+                return ((string)(this["michelin_selector_rating"]));
+            }
+            set {
+                this["michelin_selector_rating"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("www.viamichelin.com")]
+        public string HOSTS_MICHELIN {
+            get {
+                return ((string)(this["HOSTS_MICHELIN"]));
+            }
+            set {
+                this["HOSTS_MICHELIN"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public int michelin_limit {
+            get {
+                return ((int)(this["michelin_limit"]));
+            }
+            set {
+                this["michelin_limit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".spot_name_wrap h1 span.eng")]
+        public string fortra_selector_title_en {
+            get {
+                return ((string)(this["fortra_selector_title_en"]));
+            }
+            set {
+                this["fortra_selector_title_en"] = value;
             }
         }
     }

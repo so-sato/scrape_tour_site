@@ -17,7 +17,7 @@ namespace ScrapeTool
             this.selector_title = Properties.Settings.Default.yelp_selector_title;
             this.selector_url = Properties.Settings.Default.yelp_selector_url;
             this.selector_rank = Properties.Settings.Default.yelp_selector_rank;
-            this.limit = Properties.Settings.Default.yelp_limit;
+            this.limit = Properties.Settings.Default.base_limit;
         }
 
         protected override string getNextPageUrl(IDocument document)

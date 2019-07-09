@@ -16,6 +16,11 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
+            siteList.Text = siteList.GetItemText(siteList.Items[0]);
+            siteList.DropDownStyle = ComboBoxStyle.DropDownList;
+            siteList.Enabled = false;
+            textBox3.Enabled = false;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -27,8 +32,29 @@ namespace WindowsFormsApplication1
 
             try
             {
-                
-                var scraper = BaseScraper.factory(this.textBox1.Text);
+                string src = "";
+                int analyzeMode = 1;
+                if (this.rdo_url.Checked)
+                {
+                    analyzeMode = 1;
+                    src = this.textBox1.Text;
+                }
+                else
+                {
+                    analyzeMode = 2;
+                    src = this.textBox3.Text;
+                }
+
+                if (src == string.Empty)
+                {
+                    MessageBox.Show("URL/HTMLを入力してください。",
+                        "エラー",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                var scraper = BaseScraper.factory(src, analyzeMode);
                 if (scraper == null)
                 {
                     MessageBox.Show("規定サイト以外のURLが入力されました。",
@@ -93,6 +119,26 @@ namespace WindowsFormsApplication1
             {
                 this.txt_count.Text = numValue.ToString("#,0");
             }
+        }
+
+        private void rdo_txt_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Enabled = false;
+            siteList.Enabled = true;
+            textBox3.Enabled = true;
+        }
+
+        private void rdo_url_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Enabled = true;
+            siteList.Enabled = false;
+            textBox3.Enabled = false;
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.A)
+                textBox3.SelectAll();
         }
     }
 }

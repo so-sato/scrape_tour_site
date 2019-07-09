@@ -20,9 +20,6 @@
     <Setting Name="yelp_selector_rank" Type="System.String" Scope="User">
       <Value Profile="(Default)">div.businessName__373c0__1fTgn h3</Value>
     </Setting>
-    <Setting Name="yelp_limit" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
-    </Setting>
     <Setting Name="trip_restaurant_selector_title" Type="System.String" Scope="User">
       <Value Profile="(Default)">div.title a</Value>
     </Setting>
@@ -86,9 +83,6 @@
     <Setting Name="fortra_selector_review" Type="System.String" Scope="User">
       <Value Profile="(Default)">.u_rankBox .evaluateNumber</Value>
     </Setting>
-    <Setting Name="fortra_limit" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">150</Value>
-    </Setting>
     <Setting Name="trip_rating" Type="System.String" Scope="User">
       <Value Profile="(Default)">div.rating .ui_bubble_rating</Value>
     </Setting>
@@ -108,7 +102,7 @@
       <Value Profile="(Default)">.venueName h2 a</Value>
     </Setting>
     <Setting Name="forsq_selector_rank" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.u_title .u_iconRanking</Value>
+      <Value Profile="(Default)">.venueName .venueIndex</Value>
     </Setting>
     <Setting Name="forsq_selector_rating" Type="System.String" Scope="User">
       <Value Profile="(Default)">.venueScore</Value>
@@ -118,6 +112,30 @@
     </Setting>
     <Setting Name="HOSTS_4SQ" Type="System.String" Scope="User">
       <Value Profile="(Default)">ja.foursquare.com</Value>
+    </Setting>
+    <Setting Name="michelin_selector_item" Type="System.String" Scope="User">
+      <Value Profile="(Default)">li.poi-item-restaurant</Value>
+    </Setting>
+    <Setting Name="michelin_selector_title" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.poi-item-name a</Value>
+    </Setting>
+    <Setting Name="michelin_selector_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.poi-item-name a</Value>
+    </Setting>
+    <Setting Name="michelin_selector_rank" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.poi-item-name a</Value>
+    </Setting>
+    <Setting Name="michelin_selector_rating" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.poi-item-quotation-symbol</Value>
+    </Setting>
+    <Setting Name="HOSTS_MICHELIN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">www.viamichelin.com</Value>
+    </Setting>
+    <Setting Name="michelin_limit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2000</Value>
+    </Setting>
+    <Setting Name="fortra_selector_title_en" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.spot_name_wrap h1 span.eng</Value>
     </Setting>
   </Settings>
 </SettingsFile>
