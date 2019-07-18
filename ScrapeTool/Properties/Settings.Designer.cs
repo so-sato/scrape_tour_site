@@ -34,7 +34,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("www.yelp.com")]
+        [global::System.Configuration.DefaultSettingValueAttribute("www.yelp")]
         public string HOSTS_YELP {
             get {
                 return ((string)(this["HOSTS_YELP"]));
@@ -55,7 +55,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".search-result-title .indexed-biz-name a span")]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.businessName__373c0__1fTgn a")]
         public string yelp_selector_title {
             get {
                 return ((string)(this["yelp_selector_title"]));
@@ -67,7 +67,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".search-result-title .indexed-biz-name a")]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.businessName__373c0__1fTgn a")]
         public string yelp_selector_url {
             get {
                 return ((string)(this["yelp_selector_url"]));
@@ -79,25 +79,13 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".search-result-title .indexed-biz-name")]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.businessName__373c0__1fTgn h3")]
         public string yelp_selector_rank {
             get {
                 return ((string)(this["yelp_selector_rank"]));
             }
             set {
                 this["yelp_selector_rank"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
-        public int yelp_limit {
-            get {
-                return ((int)(this["yelp_limit"]));
-            }
-            set {
-                this["yelp_limit"] = value;
             }
         }
         
@@ -187,7 +175,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("div.search-result.natural-search-result")]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.mainAttributes__373c0__1r0QA")]
         public string yelp_selector_item {
             get {
                 return ((string)(this["yelp_selector_item"]));
@@ -352,18 +340,6 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
-        public int fortra_limit {
-            get {
-                return ((int)(this["fortra_limit"]));
-            }
-            set {
-                this["fortra_limit"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("div.rating .ui_bubble_rating")]
         public string trip_rating {
             get {
@@ -383,6 +359,198 @@ namespace ScrapeTool.Properties {
             }
             set {
                 this["trip_review_count"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.i-stars__373c0__Y2F3O")]
+        public string yelp_rating {
+            get {
+                return ((string)(this["yelp_rating"]));
+            }
+            set {
+                this["yelp_rating"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.venueDetails")]
+        public string forsq_selector_item {
+            get {
+                return ((string)(this["forsq_selector_item"]));
+            }
+            set {
+                this["forsq_selector_item"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".venueName h2 a")]
+        public string forsq_selector_title {
+            get {
+                return ((string)(this["forsq_selector_title"]));
+            }
+            set {
+                this["forsq_selector_title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".venueName h2 a")]
+        public string forsq_selector_url {
+            get {
+                return ((string)(this["forsq_selector_url"]));
+            }
+            set {
+                this["forsq_selector_url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".venueName .venueIndex")]
+        public string forsq_selector_rank {
+            get {
+                return ((string)(this["forsq_selector_rank"]));
+            }
+            set {
+                this["forsq_selector_rank"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".venueScore")]
+        public string forsq_selector_rating {
+            get {
+                return ((string)(this["forsq_selector_rating"]));
+            }
+            set {
+                this["forsq_selector_rating"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150")]
+        public int base_limit {
+            get {
+                return ((int)(this["base_limit"]));
+            }
+            set {
+                this["base_limit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ja.foursquare.com")]
+        public string HOSTS_4SQ {
+            get {
+                return ((string)(this["HOSTS_4SQ"]));
+            }
+            set {
+                this["HOSTS_4SQ"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("li.poi-item-restaurant")]
+        public string michelin_selector_item {
+            get {
+                return ((string)(this["michelin_selector_item"]));
+            }
+            set {
+                this["michelin_selector_item"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_title {
+            get {
+                return ((string)(this["michelin_selector_title"]));
+            }
+            set {
+                this["michelin_selector_title"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_url {
+            get {
+                return ((string)(this["michelin_selector_url"]));
+            }
+            set {
+                this["michelin_selector_url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.poi-item-name a")]
+        public string michelin_selector_rank {
+            get {
+                return ((string)(this["michelin_selector_rank"]));
+            }
+            set {
+                this["michelin_selector_rank"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".poi-item-quotation-symbol")]
+        public string michelin_selector_rating {
+            get {
+                return ((string)(this["michelin_selector_rating"]));
+            }
+            set {
+                this["michelin_selector_rating"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("www.viamichelin.com")]
+        public string HOSTS_MICHELIN {
+            get {
+                return ((string)(this["HOSTS_MICHELIN"]));
+            }
+            set {
+                this["HOSTS_MICHELIN"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public int michelin_limit {
+            get {
+                return ((int)(this["michelin_limit"]));
+            }
+            set {
+                this["michelin_limit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".spot_name_wrap h1 span.eng")]
+        public string fortra_selector_title_en {
+            get {
+                return ((string)(this["fortra_selector_title_en"]));
+            }
+            set {
+                this["fortra_selector_title_en"] = value;
             }
         }
     }
