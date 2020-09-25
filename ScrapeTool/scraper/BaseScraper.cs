@@ -58,22 +58,15 @@ namespace ScrapeTool
 
         abstract protected string getNextPageUrl(IDocument document);
 
-        public static BaseScraper factory(string url, int analyzeMode)
+        public static BaseScraper factory(string url, int analyzeMode, int selectSite)
         {
             if (analyzeMode == 1)
             {
                 Uri uri = new Uri(url);
                 string hosts = uri.Authority;
-                if (hosts.Contains(Properties.Settings.Default.HOSTS_TRIP))
+                if (hosts.Contains(Properties.Settings.Default.HOSTS_TRIP) && (uri.PathAndQuery).ToLower().Contains("restaurants"))
                 {
-                    if ((uri.PathAndQuery).ToLower().Contains("restaurants"))
-                    {
-                        return new TripRestaurantScraper(url);
-                    }
-                    else
-                    {
-                        return new TripActivitiesScraper(url);
-                    }
+                    return new TripRestaurantScraper(url);
                 }
                 else if (hosts.StartsWith(Properties.Settings.Default.HOSTS_YELP))
                 {
@@ -94,7 +87,15 @@ namespace ScrapeTool
             }
             else
             {
-                return new FoursquareScraper(url);
+                if (selectSite == 0)
+                {
+                    return new FoursquareScraper(url);
+                }
+                else if (selectSite == 1)
+                {
+                    return new TripActivitiesScraper(url);
+                }
+                
             }
             
             return null;
@@ -231,7 +232,7 @@ namespace ScrapeTool
                 return resultList;
             }
 
-            await Task.Delay(500);
+            await Task.Delay(3000);
             await this.analyze(resultList, nextUrl);
 
             return resultList;

@@ -16,27 +16,6 @@ namespace ScrapeTool.scraper
 
         }
 
-        public override string checkParam(Dictionary<string, object> param)
-        {
-            if (param.ContainsKey("city_name") && param["city_name"] != null && !param["city_name"].ToString().Equals(""))
-            {
-                this.cityName = param["city_name"].ToString();
-            }
-            else
-            {
-                return "トリップアドバイザーの場合都市名は必須です。";
-            }
-            if (param.ContainsKey("city_count") && param["city_count"] != null && !param["city_count"].ToString().Equals(""))
-            {
-                this.cityCount = param["city_count"].ToString();
-            }
-            else
-            {
-                return "トリップアドバイザーの場合分母数は必須です。";
-            }
-            return null;
-        }
-
         protected override string getNextPageUrl(IDocument document)
         {
             string nextUrl = null;

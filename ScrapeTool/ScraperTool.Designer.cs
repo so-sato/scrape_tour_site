@@ -43,8 +43,8 @@
             this.rdo_url = new System.Windows.Forms.RadioButton();
             this.rdo_txt = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.siteList = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.siteList = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -153,9 +153,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(7, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(471, 12);
+            this.label4.Size = new System.Drawing.Size(507, 12);
             this.label4.TabIndex = 2;
-            this.label4.Text = "※TripAdvisorの場合、都市名と分母数を入力（例：xx位：[都市名]の観光スポット[分母数]件中）";
+            this.label4.Text = "※TripAdvisor(レストラン)の場合、都市名と分母数を入力（例：xx位：[都市名]のレストラン[分母数]件中）";
             // 
             // txt_cityName
             // 
@@ -211,16 +211,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "解析方法";
             // 
-            // siteList
-            // 
-            this.siteList.FormattingEnabled = true;
-            this.siteList.Items.AddRange(new object[] {
-            "foursquare"});
-            this.siteList.Location = new System.Drawing.Point(65, 53);
-            this.siteList.Name = "siteList";
-            this.siteList.Size = new System.Drawing.Size(145, 20);
-            this.siteList.TabIndex = 10;
-            // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -232,6 +222,17 @@
             this.textBox3.Size = new System.Drawing.Size(655, 39);
             this.textBox3.TabIndex = 6;
             this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
+            // 
+            // siteList
+            // 
+            this.siteList.FormattingEnabled = true;
+            this.siteList.Items.AddRange(new object[] {
+            "foursquare",
+            "Tripadvisor(観光)"});
+            this.siteList.Location = new System.Drawing.Point(65, 53);
+            this.siteList.Name = "siteList";
+            this.siteList.Size = new System.Drawing.Size(145, 20);
+            this.siteList.TabIndex = 10;
             // 
             // Form1
             // 

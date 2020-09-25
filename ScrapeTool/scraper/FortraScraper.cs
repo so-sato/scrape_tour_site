@@ -64,7 +64,7 @@ namespace ScrapeTool
             {
                 item.extraList.Add(Regex.Replace(titleElement.TextContent, @"^[\s]+|[\s]+$|[\t]+|[\n]+|[\r\n]+", ""));
             }
-            await Task.Delay(1000);
+            await Task.Delay(3000);
             return item;
         }
     }

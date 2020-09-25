@@ -137,5 +137,20 @@
     <Setting Name="fortra_selector_title_en" Type="System.String" Scope="User">
       <Value Profile="(Default)">.spot_name_wrap h1 span.eng</Value>
     </Setting>
+    <Setting Name="trip_activities_selector_item_fst" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.attractions-attraction-overview-pois-PoiGrid__wrapper--2H3Mo li</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_title_fst" Type="System.String" Scope="User">
+      <Value Profile="(Default)">a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_url_fst" Type="System.String" Scope="User">
+      <Value Profile="(Default)">a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_rank_fst" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.ui_poi_review_rating .ui_bubble_rating</Value>
+    </Setting>
+    <Setting Name="trip_activities_selector_review_count_fst" Type="System.String" Scope="User">
+      <Value Profile="(Default)">div.ui_poi_review_rating .reviewCount</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

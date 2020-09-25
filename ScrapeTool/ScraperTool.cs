@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
                     return;
                 }
 
-                var scraper = BaseScraper.factory(src, analyzeMode);
+                var scraper = BaseScraper.factory(src, analyzeMode, siteList.SelectedIndex);
                 if (scraper == null)
                 {
                     MessageBox.Show("規定サイト以外のURLが入力されました。",

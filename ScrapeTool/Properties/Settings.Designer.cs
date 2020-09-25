@@ -553,5 +553,65 @@ namespace ScrapeTool.Properties {
                 this["fortra_selector_title_en"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".attractions-attraction-overview-pois-PoiGrid__wrapper--2H3Mo li")]
+        public string trip_activities_selector_item_fst {
+            get {
+                return ((string)(this["trip_activities_selector_item_fst"]));
+            }
+            set {
+                this["trip_activities_selector_item_fst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4")]
+        public string trip_activities_selector_title_fst {
+            get {
+                return ((string)(this["trip_activities_selector_title_fst"]));
+            }
+            set {
+                this["trip_activities_selector_title_fst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4")]
+        public string trip_activities_selector_url_fst {
+            get {
+                return ((string)(this["trip_activities_selector_url_fst"]));
+            }
+            set {
+                this["trip_activities_selector_url_fst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.ui_poi_review_rating .ui_bubble_rating")]
+        public string trip_activities_selector_rank_fst {
+            get {
+                return ((string)(this["trip_activities_selector_rank_fst"]));
+            }
+            set {
+                this["trip_activities_selector_rank_fst"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("div.ui_poi_review_rating .reviewCount")]
+        public string trip_activities_selector_review_count_fst {
+            get {
+                return ((string)(this["trip_activities_selector_review_count_fst"]));
+            }
+            set {
+                this["trip_activities_selector_review_count_fst"] = value;
+            }
+        }
     }
 }
