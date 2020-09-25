@@ -556,7 +556,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".attractions-attraction-overview-pois-PoiGrid__wrapper--2H3Mo li")]
+        [global::System.Configuration.DefaultSettingValueAttribute("div._25PvF8uO._2X44Y8hm")]
         public string trip_activities_selector_item_fst {
             get {
                 return ((string)(this["trip_activities_selector_item_fst"]));
@@ -568,7 +568,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("a._1QKQOve4")]
         public string trip_activities_selector_title_fst {
             get {
                 return ((string)(this["trip_activities_selector_title_fst"]));
@@ -580,7 +580,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("a._1QKQOve4")]
         public string trip_activities_selector_url_fst {
             get {
                 return ((string)(this["trip_activities_selector_url_fst"]));
@@ -592,7 +592,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("div.ui_poi_review_rating .ui_bubble_rating")]
+        [global::System.Configuration.DefaultSettingValueAttribute("span._3KcXyP0F")]
         public string trip_activities_selector_rank_fst {
             get {
                 return ((string)(this["trip_activities_selector_rank_fst"]));
@@ -604,7 +604,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("div.ui_poi_review_rating .reviewCount")]
+        [global::System.Configuration.DefaultSettingValueAttribute("span.HLvj7Lh5")]
         public string trip_activities_selector_review_count_fst {
             get {
                 return ((string)(this["trip_activities_selector_review_count_fst"]));

@@ -61,17 +61,10 @@ namespace ScrapeTool
             var ratingElement = element.QuerySelector(Properties.Settings.Default.trip_activities_selector_rank_fst);
             var reviewElement = element.QuerySelector(Properties.Settings.Default.trip_activities_selector_review_count_fst);
 
-            
-            Match matche = Regex.Match(ratingElement.ClassName, "bubble_([0-9]+)");
-            if (!string.IsNullOrEmpty(matche.Value))
+            if (ratingElement.HasAttribute("title"))
             {
-                var rating = matche.Groups[1].Value;
-                int num = 0;
-                if (Int32.TryParse(rating, out num))
-                {
-                    rating = ((decimal)num/10).ToString();
-                }
-                item.extraList.Add(rating);
+                var alt = ratingElement.GetAttribute("title");
+                item.extraList.Add(Regex.Replace(Regex.Replace(alt, "バブル評価 5 段階中 ", ""), @"[ ]|[\t]|[\n]|[\r\n]+", ""));
             }
             else
             {
