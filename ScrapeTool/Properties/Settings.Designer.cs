@@ -328,7 +328,7 @@ namespace ScrapeTool.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(".u_rankBox .evaluateNumber")]
+        [global::System.Configuration.DefaultSettingValueAttribute(".ranking_evaluateBox .u_webFontEvaluate .evaluateNumber")]
         public string fortra_selector_review {
             get {
                 return ((string)(this["fortra_selector_review"]));

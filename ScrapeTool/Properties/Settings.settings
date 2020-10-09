@@ -81,7 +81,7 @@
       <Value Profile="(Default)">.u_title .u_iconRanking</Value>
     </Setting>
     <Setting Name="fortra_selector_review" Type="System.String" Scope="User">
-      <Value Profile="(Default)">.u_rankBox .evaluateNumber</Value>
+      <Value Profile="(Default)">.ranking_evaluateBox .u_webFontEvaluate .evaluateNumber</Value>
     </Setting>
     <Setting Name="trip_rating" Type="System.String" Scope="User">
       <Value Profile="(Default)">div.rating .ui_bubble_rating</Value>

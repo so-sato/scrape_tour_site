@@ -174,6 +174,19 @@ namespace ScrapeTool
                 document = parser.Parse(url);
             }
 
+            if (document.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                if (crrPage > 1)
+                {
+                    infoMsgList.Add("最終ページまで到達したため処理を中断しました。");
+                }
+                else
+                {
+                    infoMsgList.Add("存在しないページです");
+                }
+                return resultList;
+            }
+
             var cells = document.QuerySelectorAll(selector_item);
 
             if (cells.Count() == 0)

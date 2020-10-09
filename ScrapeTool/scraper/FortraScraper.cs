@@ -39,6 +39,7 @@ namespace ScrapeTool
         protected override void getValueExtra(IElement element, ref Item item)
         {
             var reviewElement = element.QuerySelector(Properties.Settings.Default.fortra_selector_review);
+            if (reviewElement == null) return;
             item.extraList.Add(System.Text.RegularExpressions.Regex.Replace(reviewElement.TextContent, @"[\t]|[\n]|[\r\n]+", ""));
         }
 
@@ -49,7 +50,7 @@ namespace ScrapeTool
 
             return true;
         }
-
+        
         protected override async Task<Item> addDetailAnalyze(string url, Item item)
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
